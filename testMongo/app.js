@@ -83,7 +83,7 @@ app.patch('/users/:id', (req, res) => {
   
     if (ObjectId.isValid(req.params.id)) {
       db.collection("tackOne")
-        .updateOne({ _id: new ObjectId(req.params.id) }, { $set: updates }) // Use updateOne instead of updatesOne
+        .updateOne({ _id: new ObjectId(req.params.id) }, { $set: updates })
         .then(result => {
           res.status(200).json(result);
         })
